@@ -15,14 +15,23 @@ func TestReset(t *testing.T) {
 
 func TestAdd(t *testing.T) {
 	a := uint16(0)
-	b := uint16(25)
+	b := uint16(0b11010111)
 	a = Add(a, b)
 	assert.Equal(t, a, b)
 }
 
 func TestRemove(t *testing.T) {
-	a := uint16(4)
-	b := uint16(5)
+	a := uint16(0b100)
+	b := uint16(0b101)
 	a = Remove(a, b)
 	assert.Equal(t, a, uint16(0))
 }
+
+func TestHas(t *testing.T) {
+	a := uint16(0b1011100)
+	b := uint16(0b1000000)
+	c := uint16(0b1000010)
+	assert.True(t, Has(a, b))
+	assert.False(t, Has(a, c))
+}
+
