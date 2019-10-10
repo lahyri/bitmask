@@ -1,7 +1,7 @@
 package bitmask
 
 func Reset(bitmask uint16) uint16 {
-	return 0x0000
+	return 0b000000000000000000
 }
 
 func Add(bitmask uint16, value uint16) uint16 {
